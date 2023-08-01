@@ -3,3 +3,16 @@ body{
     box-sizing: border-box;
     background-color: whitesmoke;
 }
+.card .card-content p {
+    overflow: auto;
+}
+.posts .col
+{
+    height: 500px;
+    margin-bottom: 50px;
+}
+.card-image {
+    max-height: 250px;
+    overflow: hidden;
+    background-size: contain;
+}

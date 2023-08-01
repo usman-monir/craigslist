@@ -3,19 +3,32 @@
 {% block content %}
     <h3 style="text-align: center">{{ search | title }}</h3>
 
-    <div class="row">
+    {% if final_posts %}
+        <div class="row posts">
+            {% for post in final_posts %}
             <div class="col s4">
                 <div class="card">
                     <div class="card-image">
-                        <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
+                        <a href="{{ post.1 }}" target='_blank'><img src="{{ post.4 }}" alt="{{ post.0 }}"></a>
                     </div>
                     <div class="card-content">
                         <p>{{ post.0 }}</p>
                     </div>
+                    <div class="card-content">
+                        <small>{{ post.3 }}</small>
+                    </div>
                     <div class="card-action">
-                        <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
+                            <a href="{{ post.1 }}" target='_blank' >View listing: Price {{ post.2 }}</a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-    </div>
+            {% else %}
+            <div class='center'>
+                <h5>No Posts to Show</h5>
+                <p>Please double check the spellings of your search term</p>
+            <div>
+            {% endif %}
 {% endblock content %}
+
